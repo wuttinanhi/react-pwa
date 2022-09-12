@@ -1,21 +1,22 @@
+import { Link, Route, Routes } from "react-router-dom";
+import AboutPage from "./AboutPage";
 import "./App.css";
-import logo from "./logo.svg";
+import ContactPage from "./ContactPage";
+import HomePage from "./HomePage";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello World!</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Welcome to React Router!</h1>
+      <Link to="/">Home</Link>&nbsp;
+      <Link to="/about">About</Link>&nbsp;
+      <Link to="/contact">Contact</Link>&nbsp;
+      <a href="http://google.com">Google</a>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="about" element={<AboutPage />} />
+        <Route path="contact" element={<ContactPage />} />
+      </Routes>
     </div>
   );
 }
